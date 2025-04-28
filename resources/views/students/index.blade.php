@@ -1,53 +1,18 @@
 @extends('students.layout')
 
 @section('content')
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background: #f8f9fa;">
+  <div class="card shadow p-5 rounded-4" style="max-width: 500px; width: 100%;">
+    <h2 class="text-center mb-4 text-primary">Absensi Berhasil</h2>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <p><strong>Nama:</strong> {{ $student->name }}</p>
+    <p><strong>NIM:</strong> {{ $student->nim }}</p>
+    <p><strong>Keterangan Kehadiran:</strong> {{ $student->keterangan }}</p>
+    <p><strong>Shift:</strong> {{ ucfirst($student->shift_option) }}</p>
 
-<div class="pull-left mb-3">
-  <button onclick="history.back()" class="btn btn-primary">Back</button>
+    <div class="text-center mt-4">
+      <a href="{{ route('students.show') }}" class="btn btn-primary">Input Absensi Baru</a>
+    </div>
+  </div>
 </div>
-
-<table class="table table-bordered">
-  <thead class="table-dark">
-    <tr>
-      <th>Pilih Shift</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="background-color: #c7cccf;">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="shift_option" id="shift1" value="shift 1">
-          <label class="form-check-label" for="shift1">Shift 1</label>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td style="background-color: #c7cccf;">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="shift_option" id="shift2" value="shift 2">
-          <label class="form-check-label" for="shift2">Shift 2</label>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td style="background-color: #c7cccf;">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="shift_option" id="nonshift" value="non shift">
-          <label class="form-check-label" for="nonshift">Non Shift</label>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td style="background-color: #c7cccf;">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="shift_option" id="teory" value="teory">
-          <label class="form-check-label" for="teory">Teory</label>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 @endsection
