@@ -8,10 +8,14 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index()
-    {
-        $students = Student::latest()->paginate(5);
-        return view('students.index', compact('students'));
-    }
+{
+    // Reset pesan sukses agar tidak muncul lagi
+    session()->forget('success');
+
+    $students = Student::all();
+    return view('students.index', compact('students'));
+}
+
 
     public function create()
     {

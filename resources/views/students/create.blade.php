@@ -44,7 +44,7 @@
       </div>
 
       <fieldset class="mb-5">
-        <legend class="fw-semibold mb-4">Keterangan Kehadiran</legend>
+        <legend class="fw-semibold mb-4 text-center">Keterangan Kehadiran</legend>
         <div class="d-flex gap-3 flex-wrap justify-content-center">
           @php
             $statuses = ['Hadir', 'Tidak Hadir', 'Sakit', 'Izin', 'Terlambat'];
